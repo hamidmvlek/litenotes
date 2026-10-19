@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <title>LiteNotes</title>
 <meta name="description" content="A quiet notebook: write, highlight, flag, and keep small dithered photos. Notes stay on your device.">
 <meta name="theme-color" content="#f6f6f6">
@@ -62,6 +62,13 @@
       <button id="f-right" type="button"></button>
     </nav>
   </footer>
+</div>
+
+<div id="confirm" hidden>
+  <div class="confirm-panel">
+    <button id="confirm-delete" type="button">Delete note</button>
+    <button id="confirm-cancel" type="button">Cancel</button>
+  </div>
 </div>
 
 <input id="photo-input" type="file" accept="image/*" hidden>
