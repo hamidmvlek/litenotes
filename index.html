@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>LiteNotes</title>
+<meta name="description" content="A quiet notebook: write, highlight, flag, and keep small dithered photos. Notes stay on your device.">
+<meta name="theme-color" content="#f6f6f6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="LiteNotes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/favicon-32.png">
+<link rel="preload" href="fonts/Overpass-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+  try { if (localStorage.getItem('darkMode') === '1') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+</script>
+</head>
+<body>
+<div id="app">
+  <main id="main">
+    <header id="header">
+      <span id="heading">LiteNotes</span>
+      <input id="search" type="search" placeholder="Search name or date" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" hidden>
+      <button id="theme" type="button" aria-label="Switch to dark mode">
+        <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true">
+          <circle cx="10" cy="10" r="8.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M10 1.4a8.6 8.6 0 0 0 0 17.2z" fill="currentColor"/>
+        </svg>
+      </button>
+    </header>
+
+    <div id="list-scroll"><ol id="list"></ol></div>
+
+    <div id="dim"></div>
+
+    <section id="sheet" aria-hidden="true">
+      <input id="note-title" type="text" placeholder="Title" readonly enterkeyhint="next" autocomplete="off">
+      <div class="rule"></div>
+      <div id="note-area">
+        <div id="note-scroll">
+          <div id="note-body-wrap">
+            <div id="note-placeholder">Write something…</div>
+            <div id="note-body" spellcheck="true"></div>
+          </div>
+          <div id="note-photos"></div>
+          <div id="note-tail"></div>
+        </div>
+        <div id="note-shadow"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="rule-full"></div>
+    <nav class="bar">
+      <button id="f-left" type="button"></button>
+      <button id="f-center" type="button"></button>
+      <button id="f-right" type="button"></button>
+    </nav>
+  </footer>
+</div>
+
+<input id="photo-input" type="file" accept="image/*" hidden>
+<script src="app.js"></script>
+</body>
+</html>
