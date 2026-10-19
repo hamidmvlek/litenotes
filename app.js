@@ -254,7 +254,10 @@ function current() { return byId(openId); }
 
 /** Reading mode pushes the sheet down; pad the scroll area so its end stays reachable. */
 function layoutSheet() {
-  noteScroll.style.paddingBottom = openId && !editing ? Math.max(0, sheet.offsetHeight * 0.42 - 7) + 'px' : '0px';
+  // Whole pixels, so nothing inside the sheet re-snaps when the slide ends.
+  const lower = Math.max(0, Math.round(sheet.offsetHeight * 0.42 - 7));
+  sheet.style.setProperty('--lower', lower + 'px');
+  noteScroll.style.paddingBottom = openId && !editing ? lower + 'px' : '0px';
 }
 
 function applySheetState() {

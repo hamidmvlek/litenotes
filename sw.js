@@ -1,6 +1,6 @@
 // Offline support. App files come from the network first (so updates show up right away)
 // and fall back to the cached copy when offline. Bump CACHE on every release.
-const CACHE = 'litenotes-v2';
+const CACHE = 'litenotes-v3';
 const FILES = [
   './', 'index.html', 'style.css', 'app.js', 'manifest.webmanifest',
   'fonts/Overpass-Regular.ttf', 'fonts/Overpass-Bold.ttf',
